@@ -898,15 +898,15 @@ extern "C" void draw_detections_cv_v3(mat_cv* mat, detection *dets, int num, flo
                             sprintf(buff, " (id: %d)", dets[i].track_id);
                             strcat(labelstr, buff);
                         }
-                        sprintf(buff, " (%2.0f%%)", dets[i].prob[j] * 100);
+                        sprintf(buff, " =(%2.0f%%)", dets[i].prob[j] * 100);
                         strcat(labelstr, buff);
-                        printf("%s: %.0f%% ", names[j], dets[i].prob[j] * 100);
+                        printf("%s:= %.0f%% ", names[j], dets[i].prob[j] * 100);
                         if (dets[i].track_id) printf("(track = %d, sim = %f) ", dets[i].track_id, dets[i].sim);
                     }
                     else {
                         strcat(labelstr, ", ");
                         strcat(labelstr, names[j]);
-                        printf(", %s: %.0f%% ", names[j], dets[i].prob[j] * 100);
+                        printf(", %s=: %.0f%% ", names[j], dets[i].prob[j] * 100);
                     }
                 }
             }
